@@ -113,9 +113,9 @@
   .wordmark { gap: 8px; font-size: 12px; }
   .site-header nav { gap: 12px; }
   .site-header nav a:first-child { display: none; }
-  .intro-section { grid-template-columns: minmax(0, 1fr) 92px; gap: 14px; }
+  .intro-section { grid-template-columns: 1fr; gap: 14px; }
   .intro-copy h1 { font-size: 36px; }
-  .intro-copy h1 br { display: none; }
+  .portrait-frame { width: 170px; max-width: 58%; margin-left: auto; }
   .intro-summary { margin-top: 17px; font-size: 13px; }
   .intro-actions { align-items: start; flex-direction: column; gap: 16px; margin-top: 22px; }
   .intro-location { max-width: 250px; margin-top: 25px; line-height: 1.6; }
