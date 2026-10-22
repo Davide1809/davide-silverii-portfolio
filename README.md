@@ -10,7 +10,16 @@ A personal portfolio built with React and Vite, featuring cybersecurity and soft
 
 ## Run locally
 
-This project uses Vite 8 and requires Node.js 22.12 or newer. If you use nvm, run `nvm install` the first time, then `nvm use` from the project folder to select the version in `.nvmrc`.
+This project uses Vite 8 and requires Node.js 22.12 or newer. Installing Node with nvm does not automatically switch the current Terminal session to it. After opening a new Terminal, load nvm and select the project's Node version before running npm commands:
+
+```sh
+source "$HOME/.nvm/nvm.sh"
+nvm install 22
+nvm use 22
+node -v
+```
+
+Confirm the version is `v22.12.0` or newer. If `node -v` still shows Node 18, do not continue: load nvm and run `nvm use 22` again.
 
 1. Clone this repository:
 
@@ -19,7 +28,7 @@ This project uses Vite 8 and requires Node.js 22.12 or newer. If you use nvm, ru
    cd davide-silverii-portfolio
    ```
 
-2. Install dependencies:
+2. Select Node 22 as shown above, then install dependencies:
 
    ```sh
    npm install
