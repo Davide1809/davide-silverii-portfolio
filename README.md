@@ -54,8 +54,9 @@ Confirm the version is `v22.12.0` or newer. If `node -v` still shows Node 18, do
 ```text
 src/
   assets/       Profile image
+  components/   Reusable page and project components
   data/         Exported portfolio project data
-  App.jsx       Page layout and project filtering
+  App.jsx       Page composition and project filtering state
   Portfolio.css Portfolio styles
   index.css     Global styles
 ```
