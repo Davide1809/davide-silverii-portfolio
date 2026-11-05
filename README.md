@@ -20,12 +20,12 @@ This project uses Vite 8 and requires Node.js 22.12 or newer. Installing Node wi
 
 ```sh
 source "$HOME/.nvm/nvm.sh"
-nvm install 22
-nvm use 22
+nvm install
+nvm use
 node -v
 ```
 
-Confirm the version is `v22.12.0` or newer. If `node -v` still shows Node 18, do not continue: load nvm and run `nvm use 22` again.
+These commands use the Node 22 version specified in `.nvmrc`. Confirm `node -v` reports Node.js 22.12 or newer before running npm commands. If you do not use nvm, install Node.js 22.12 or newer and select it in your terminal.
 
 1. Clone this repository:
 
@@ -34,7 +34,7 @@ Confirm the version is `v22.12.0` or newer. If `node -v` still shows Node 18, do
    cd davide-silverii-portfolio
    ```
 
-2. Select Node 22 as shown above, then install dependencies:
+2. Select a supported Node version as shown above, then install dependencies:
 
    ```sh
    npm install

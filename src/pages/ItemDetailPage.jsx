@@ -29,6 +29,26 @@ export function ItemDetailPage() {
         {project.tools.map((tool) => <li key={tool}>{tool}</li>)}
       </ul>
       <p className="item-detail-id">Project ID: <code>{project.id}</code></p>
+      {project.links?.length > 0 && (
+        <section className="item-detail-links" aria-labelledby="project-links-title">
+          <h2 id="project-links-title">Project links</h2>
+          <ul>
+            {project.links.map(({ label, href, download = false }) => (
+              <li key={href}>
+                <a
+                  className="project-resource-link"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  {...(download ? { download: true } : {})}
+                >
+                  {label} <span aria-hidden="true">{download ? '↓' : '↗'}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   )
 }

@@ -4,10 +4,10 @@ export function IntroSection({ profilePhoto }) {
   return (
     <section className="intro-section" aria-labelledby="intro-title">
       <div className="intro-copy">
-        <p className="eyebrow"><span className="status-dot" /> Cybersecurity student · Developer</p>
+        <p className="eyebrow"><span className="status-dot" /> Cybersecurity and Computer Science student </p>
         <h1 id="intro-title">Curious about systems.<br />{' '}<span>Focused on making them safer.</span></h1>
         <p className="intro-summary">
-          I’m Davide, a cybersecurity student who enjoys understanding how technology works
+          I’m Davide, a cybersecurity and computer science student who enjoys understanding how technology works
           and building useful things with it.
         </p>
         <div className="intro-actions">
