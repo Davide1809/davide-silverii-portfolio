@@ -1,64 +1,33 @@
-import { useState } from 'react'
-import profilePhoto from './assets/profile.jpg'
-import { projects } from './data/projects.js'
-import { AboutSection } from './components/AboutSection.jsx'
-import { ContactSection } from './components/ContactSection.jsx'
+import { Link, Route, Routes } from 'react-router-dom'
 import { Footer } from './components/Footer.jsx'
 import { Header } from './components/Header.jsx'
-import { IntroSection } from './components/IntroSection.jsx'
-import { ProjectCard } from './components/ProjectCard.jsx'
-import { ProjectCategoryControls } from './components/ProjectCategoryControls.jsx'
-import { ProjectFilters } from './components/ProjectFilters.jsx'
+import { HomePage } from './pages/HomePage.jsx'
+import { ItemDetailPage } from './pages/ItemDetailPage.jsx'
+import { ItemListPage } from './pages/ItemListPage.jsx'
 import './Portfolio.css'
 
-const categories = ['All', ...new Set(projects.map((project) => project.category))]
+function NotFoundPage() {
+  return (
+    <section className="route-page content-width not-found-page">
+      <p className="eyebrow">Page not found</p>
+      <h1>This page does not exist.</h1>
+      <p>Use the links below to continue browsing the portfolio.</p>
+      <Link className="button button-primary" to="/">Back home <span aria-hidden="true">↗</span></Link>
+    </section>
+  )
+}
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState('All')
-  const [searchTerm, setSearchTerm] = useState('')
-  const normalizedSearch = searchTerm.trim().toLowerCase()
-  const visibleProjects = projects.filter((project) => {
-    const matchesCategory = activeCategory === 'All' || project.category === activeCategory
-    const searchableText = `${project.title} ${project.description} ${project.tools.join(' ')}`
-    const matchesSearch = searchableText.toLowerCase().includes(normalizedSearch)
-
-    return matchesCategory && matchesSearch
-  })
-
   return (
     <div className="site-shell">
       <Header />
       <main id="top">
-        <IntroSection profilePhoto={profilePhoto} />
-        <AboutSection />
-        <section className="projects-section" id="projects" aria-labelledby="projects-title">
-          <div className="content-width">
-            <div className="projects-heading">
-              <div>
-                <p className="eyebrow">
-                  Selected work <span className="count-mark">{String(projects.length).padStart(2, '0')}</span>
-                </p>
-                <h2 id="projects-title">Projects in progress<br />and in practice.</h2>
-              </div>
-              <ProjectFilters searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-            </div>
-            <ProjectCategoryControls
-              categories={categories}
-              activeCategory={activeCategory}
-              onCategoryChange={setActiveCategory}
-              resultCount={visibleProjects.length}
-            />
-            <div className="project-grid">
-              {visibleProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
-              ))}
-              {visibleProjects.length === 0 && (
-                <p className="empty-state">No projects match that search. Try another keyword or category.</p>
-              )}
-            </div>
-          </div>
-        </section>
-        <ContactSection />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/items" element={<ItemListPage />} />
+          <Route path="/items/:id" element={<ItemDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>

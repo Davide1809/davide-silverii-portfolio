@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function IntroSection({ profilePhoto }) {
   return (
     <section className="intro-section" aria-labelledby="intro-title">
@@ -9,7 +11,7 @@ export function IntroSection({ profilePhoto }) {
           and building useful things with it.
         </p>
         <div className="intro-actions">
-          <a className="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+          <Link className="button button-primary" to="/items">Explore my work <span aria-hidden="true">↓</span></Link>
           <a className="text-link" href="mailto:dsilverii01@rio.edu">Contact me <span aria-hidden="true">↗</span></a>
         </div>
         <p className="intro-location"><span aria-hidden="true">↳</span> Studying at the University of Rio Grande</p>

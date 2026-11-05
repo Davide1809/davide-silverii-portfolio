@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function ProjectCard({ project, index }) {
   return (
     <article className="project-item">
@@ -10,6 +12,9 @@ export function ProjectCard({ project, index }) {
       <ul className="tool-list" aria-label="Tools and concepts">
         {project.tools.map((tool) => <li key={tool}>{tool}</li>)}
       </ul>
+      <Link className="project-detail-link" to={`/items/${project.id}`}>
+        View project details <span aria-hidden="true">↗</span>
+      </Link>
     </article>
   )
 }

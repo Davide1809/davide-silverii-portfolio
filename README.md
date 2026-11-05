@@ -2,6 +2,12 @@
 
 A personal portfolio built with React and Vite, featuring cybersecurity and software development projects.
 
+## Route plan
+
+- `/` → Home: portfolio introduction and about information.
+- `/items` → Item list: searchable, filterable collection of portfolio projects.
+- `/items/:id` → Item details: details for the project identified by its ID.
+
 ## Requirements
 
 - Node.js 22.12 or newer
@@ -56,9 +62,14 @@ src/
   assets/       Profile image
   components/   Reusable page and project components
   data/         Exported portfolio project data
-  App.jsx       Page composition and project filtering state
+  App.jsx       Router configuration and shared page layout
+  pages/        Home, item list, and item detail views
   Portfolio.css Portfolio styles
   index.css     Global styles
 ```
 
 Dependencies are installed locally and `node_modules/` is excluded from Git by `.gitignore`.
+
+## Route checks
+
+See [ROUTE_TESTS.md](./ROUTE_TESTS.md) for the navigation checks performed for this assignment.
