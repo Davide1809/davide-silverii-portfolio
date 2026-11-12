@@ -22,6 +22,9 @@ export const projects = [
     category: 'Backend',
     description: 'A RESTful backend built around structured endpoint routing, a normalized database schema, and session-based authentication, with requests validated in Postman.',
     tools: ['REST API', 'Database design', 'Session authentication', 'Postman'],
+    links: [
+      { label: 'Source code on GitHub', href: 'https://github.com/Davide1809/appdev1-final-project' },
+    ],
   },
   {
     id: 'c-inventory-system',
